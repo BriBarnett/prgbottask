@@ -1,0 +1,12 @@
+# Old legal pages - do not include in public repo (constraints require they remain untouched and separate)
+privacy-policy.html
+prgbottask-privacy-policy.html
+
+# Build / temp files
+.DS_Store
+*.log
+server.log
+
+# Railway / Caddy specific
+.railway
+.env
