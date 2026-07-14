@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrgBotTask for HVAC — Text PrgBotTask from the Job Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover; }
+    </style>
+</head>
+<body class="tail-container bg-zinc-50">
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl">P</div>
+                <span class="heading-font text-3xl font-semibold">PrgBotTask</span>
+            </div>
+            <a href="https://prgbottask.com" class="text-sm font-medium hover:text-orange-600">← Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg text-white py-24">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h1 class="heading-font text-6xl font-semibold tracking-tighter">PrgBotTask for HVAC</h1>
+            <p class="text-2xl mt-6 max-w-2xl mx-auto">Delta T. Superheat. Subcooling. Filter changes. Maintenance summaries. All from a simple text.</p>
+            <button onclick="copyTextCommand()" class="mt-10 bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-3xl text-xl font-semibold">Text PrgBotTask to start your free trial</button>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-16">
+        <h2 class="text-4xl font-semibold mb-8">HVAC Workflows Built In</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-3xl border">
+                <h3 class="font-semibold text-xl mb-4">Maintenance & PM Reports</h3>
+                <p class="text-zinc-600">Text your readings. Get professional customer-ready reports with technical details, recommendations, and “System running optimally” summaries.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border">
+                <h3 class="font-semibold text-xl mb-4">Instant Invoicing</h3>
+                <p class="text-zinc-600">Log labor, parts, and refrigerant. Receive a clean branded invoice in seconds.</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-sm text-zinc-500">Ready to stop doing paperwork at 10pm?</p>
+            <button onclick="copyTextCommand()" class="mt-6 bg-orange-500 text-white px-10 py-4 rounded-3xl font-semibold">Text PrgBotTask now →</button>
+        </div>
+    </div>
+
+    <script>
+        function copyTextCommand() {
+            navigator.clipboard.writeText("Text PrgBotTask to get started with HVAC workflows");
+            alert("✅ Copied! Now text PrgBotTask from your phone.");
+        }
+    </script>
+</body>
+</html>
