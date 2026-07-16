@@ -4,12 +4,17 @@ prgbottask.com {
     
     root * /usr/share/caddy
     
+    encode gzip zstd
+
+    # Serve static files (this handles /hvac/, /demo/, etc.)
     file_server {
         index index.html
     }
-    
-    encode gzip zstd
-    
+
+    # Optional: Automatically add trailing slash for clean directory URLs
+    @no_slash path_regexp ^/(hvac|demo|plumbing|electrical)$
+    redir @no_slash {http.request.uri}/ permanent
+
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains"
         X-Content-Type-Options "nosniff"
@@ -17,9 +22,6 @@ prgbottask.com {
         Referrer-Policy "strict-origin-when-cross-origin"
         Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     }
-    
-    @www host www.prgbottask.com
-    redir @www https://prgbottask.com{uri}
     
     log {
         output stdout
