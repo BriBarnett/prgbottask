@@ -1,12 +1,16 @@
 FROM caddy:2-alpine
 
-# Copy all website files (including hvac/, demo/, etc.)
-COPY . /usr/share/caddy
+# Set working directory
+WORKDIR /srv
 
-# Copy the custom Caddyfile
+# Copy all website files (this is the important one)
+COPY . /srv
+
+# Copy custom Caddyfile
 COPY Caddyfile /etc/caddy/Caddyfile
 
+# Expose the port Railway expects
 EXPOSE 8080
 
+# Start Caddy
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
-Force rebuild - 2026-07-16
