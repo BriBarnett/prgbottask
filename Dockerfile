@@ -14,3 +14,4 @@ EXPOSE 8080
 
 # Start Caddy
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+# Rebuild triggered: 2026-07-16 17:40
