@@ -2,8 +2,18 @@
     root * /srv
     encode gzip zstd
 
-    file_server {
-        index index.html
+    # Health check for Railway + new features
+    handle /health {
+        root * /srv
+        rewrite * /health.html
+        file_server
+    }
+
+    handle {
+        root * /srv
+        file_server {
+            index index.html
+        }
     }
 
     header {
@@ -11,6 +21,8 @@
         X-Content-Type-Options "nosniff"
         X-Frame-Options "SAMEORIGIN"
         Referrer-Policy "strict-origin-when-cross-origin"
+        # PWA and mobile improvements for tablet use on job sites
+        Content-Security-Policy "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self' https:;"
     }
 
     log {
