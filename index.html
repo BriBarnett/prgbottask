@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Text PrgBotTask from the job site. The AI business assistant built for HVAC, plumbing, electrical, maintenance & skilled trades. Simple texts become professional invoices, reports, follow-ups & guidance. 30-day free trial.">
-    <meta name="keywords" content="field service software, HVAC software, plumbing software, trade business assistant, text based invoicing, maintenance reporting, PrgBotTask, Arkansas field service">
+    <meta name="description" content="Text PrgBotTask from the job site. Tap a scheduled job address for instant spoken summary of customer issues, filter sizes, past work, and pending estimates. Speak estimates into existence with on-device customer signature. Built for HVAC, plumbing, electrical & field service techs. 30-day free trial.">
+    <meta name="keywords" content="field service software, HVAC software, plumbing software, job summary for techs, voice estimate creation, digital signature on tablet, text based field service, maintenance reporting, PrgBotTask, Arkansas field service, Delta T summary">
     <meta name="author" content="PrgBotTask, LLC">
     <link rel="canonical" href="https://prgbottask.com">
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A2540'/%3E%3Ctext x='50' y='68' font-size='65' text-anchor='middle' fill='%23FF6B00' font-weight='700'%3EP%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 
-    <title>PrgBotTask | Text PrgBotTask — AI Assistant for HVAC, Plumbing & Field Service</title>
+    <title>PrgBotTask | Text PrgBotTask — Know the Job Before You Arrive</title>
 
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="PrgBotTask — Text PrgBotTask | Your Field Service Business Assistant">
-    <meta property="og:description" content="Built for real technicians. Text from the job site, truck, or roof. Get professional invoices, maintenance reports, and smart follow-ups automatically. 30-day free trial.">
+    <meta property="og:title" content="PrgBotTask — Text PrgBotTask | Know the Job. Speak the Estimate.">
+    <meta property="og:description" content="Tap any scheduled job address for spoken summary (customer issues, filter sizes, past work, open estimates). Speak to create estimates your customer signs on your phone or tablet. Built for real HVAC and field techs.">
     <meta property="og:url" content="https://prgbottask.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PrgBotTask">
     <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
-    <meta property="og:image:alt" content="Field service technician texting on job site">
+    <meta property="og:image:alt" content="HVAC technician reviewing job summary on phone before arrival">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PrgBotTask — Text PrgBotTask | Field Service AI">
-    <meta name="twitter:description" content="Your phone is now a complete back office. Text PrgBotTask from any job site.">
+    <meta name="twitter:title" content="PrgBotTask — Know Before You Knock">
+    <meta name="twitter:description" content="Job summaries on tap. Voice estimates with customer signature. Text-first for real technicians.">
     <meta name="twitter:image" content="https://picsum.photos/id/1015/1200/630">
 
-    <!-- Structured Data (Schema.org) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "PrgBotTask",
-      "description": "Text-first AI operating system for field service professionals in HVAC, plumbing, electrical and maintenance.",
+      "description": "Text-first AI assistant for field service. Tap job address for spoken summary of issues, history, filter sizes and pending estimates. Speak to generate estimates with on-device digital signature.",
       "applicationCategory": "BusinessApplication",
       "offers": {
         "@type": "Offer",
@@ -58,7 +58,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
         
         :root {
             --primary: #0A2540;
@@ -74,7 +74,7 @@
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.9)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
 
         .trade-card {
@@ -119,6 +119,10 @@
             box-shadow: 0 10px 15px -3px rgb(255 107 0 / 0.3);
         }
 
+        .job-summary-card {
+            background: linear-gradient(135deg, #0A2540, #1e3a5f);
+        }
+
         table {
             border-collapse: collapse;
         }
@@ -148,6 +152,7 @@
                 
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#how" class="nav-link text-zinc-600 hover:text-zinc-900">How it Works</a>
+                    <a href="#prepare" class="nav-link text-zinc-600 hover:text-zinc-900">Arrive Prepared</a>
                     <a href="#trades" class="nav-link text-zinc-600 hover:text-zinc-900">For Your Trade</a>
                     <a href="#demo" class="nav-link text-zinc-600 hover:text-zinc-900">Try Demo</a>
                     <a href="#results" class="nav-link text-zinc-600 hover:text-zinc-900">Results</a>
@@ -177,12 +182,12 @@
                 
                 <h1 class="heading-font text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
                     Text <span class="text-[#FF6B00]">PrgBotTask</span>.<br>
-                    Run your field service business from your phone.
+                    Know the job before you knock.
                 </h1>
                 
                 <p class="text-xl md:text-2xl text-white/90 max-w-lg mb-10">
-                    No apps. No training. No desktop software.<br>
-                    Just text from the truck, roof, or job site and get professional invoices, reports, follow-ups, and guidance.
+                    Tap a scheduled job's address for an instant spoken summary of customer issues, filter sizes, past work, and any open estimates.<br><br>
+                    Speak estimates into existence. Customer signs on your phone or tablet.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -192,20 +197,20 @@
                         <span>Text PrgBotTask to start your 30-day free trial</span>
                     </button>
                     
-                    <a href="#demo" 
+                    <a href="#prepare" 
                        class="border border-white/60 hover:bg-white/10 transition-colors text-white px-8 py-5 rounded-3xl font-medium flex items-center justify-center gap-x-2 text-lg">
-                        Try the demo
+                        See how techs arrive prepared
                     </a>
                 </div>
                 
                 <div class="mt-10 flex items-center gap-x-8 text-sm">
                     <div class="flex items-center gap-x-1.5">
                         <i class="fa-solid fa-check text-emerald-400"></i>
-                        <span>No app required</span>
+                        <span>Spoken job summaries</span>
                     </div>
                     <div class="flex items-center gap-x-1.5">
                         <i class="fa-solid fa-check text-emerald-400"></i>
-                        <span>Works anywhere</span>
+                        <span>Voice estimates + signature</span>
                     </div>
                     <div class="flex items-center gap-x-1.5">
                         <i class="fa-solid fa-check text-emerald-400"></i>
@@ -224,15 +229,15 @@
                     <div class="sticky top-28">
                         <span class="px-4 py-1.5 bg-orange-100 text-[#FF6B00] text-xs font-semibold rounded-3xl">THE REAL PROBLEM</span>
                         <h2 class="heading-font text-5xl font-semibold tracking-tighter leading-none mt-6 mb-8">
-                            The paperwork follows you home
+                            You show up blind too often
                         </h2>
                         <p class="text-xl text-zinc-600">
-                            You already work hard with your hands all day. Then you spend your evenings writing invoices, chasing payments, creating maintenance reports, and sending the same follow-up texts.
+                            You get the address. You drive there. But you don't remember the exact complaint, what filter was used last time, what estimates are still open, or what the customer was frustrated about last visit.
                         </p>
                         <div class="mt-8 border-l-4 border-[#FF6B00] pl-6 text-zinc-500">
-                            “I became a tech because I like fixing things — not sitting at a computer until 10pm.”
+                            “I hate walking in cold. A 2-minute summary on the way would change everything.”
                         </div>
-                        <div class="text-xs text-zinc-400 mt-3">— Real tech, Little Rock, AR</div>
+                        <div class="text-xs text-zinc-400 mt-3">— HVAC tech, Central AR</div>
                     </div>
                 </div>
                 
@@ -240,22 +245,22 @@
                     <div class="flex gap-6 bg-zinc-50 border border-zinc-100 rounded-3xl p-8">
                         <div class="text-6xl font-light text-zinc-200">01</div>
                         <div>
-                            <div class="font-semibold text-xl mb-2">Admin eats your evenings</div>
-                            <div class="text-zinc-600">Job notes stay in your head or on crumpled paper until you finally sit down to type everything up.</div>
+                            <div class="font-semibold text-xl mb-2">No context before the knock</div>
+                            <div class="text-zinc-600">You waste time on site piecing together history from memory or paper notes.</div>
                         </div>
                     </div>
                     <div class="flex gap-6 bg-zinc-50 border border-zinc-100 rounded-3xl p-8">
                         <div class="text-6xl font-light text-zinc-200">02</div>
                         <div>
-                            <div class="font-semibold text-xl mb-2">Invoicing is always late</div>
-                            <div class="text-zinc-600">Customers wait. Cash flow suffers. You hate the part of the job that actually gets you paid.</div>
+                            <div class="font-semibold text-xl mb-2">Estimates happen after the fact</div>
+                            <div class="text-zinc-600">Back and forth with the office or slow paper forms. Customer loses momentum.</div>
                         </div>
                     </div>
                     <div class="flex gap-6 bg-zinc-50 border border-zinc-100 rounded-3xl p-8">
                         <div class="text-6xl font-light text-zinc-200">03</div>
                         <div>
-                            <div class="font-semibold text-xl mb-2">Software that doesn't understand the field</div>
-                            <div class="text-zinc-600">Desktop apps, complicated CRMs, and tools built for office workers — none of them work when you're on a roof or under a house.</div>
+                            <div class="font-semibold text-xl mb-2">Missed details cost money</div>
+                            <div class="text-zinc-600">Forgotten open estimates, wrong filter size recommendations, repeat visits that could have been prevented.</div>
                         </div>
                     </div>
                 </div>
@@ -263,7 +268,7 @@
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- HOW IT WORKS (existing + reference to new) -->
     <section id="how" class="py-24 bg-zinc-900 text-white">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -272,12 +277,13 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1-3 same as before, with slight updates for new features -->
                 <div class="bg-zinc-800/50 border border-zinc-700 rounded-3xl p-8 relative">
                     <div class="step-number w-12 h-12 rounded-2xl flex items-center justify-center text-white text-3xl font-bold absolute -top-6 left-8 shadow-xl">1</div>
                     <div class="pt-8">
                         <div class="h-2 w-20 bg-[#FF6B00] rounded mb-6"></div>
                         <h3 class="text-2xl font-semibold mb-4">Text from the job site</h3>
-                        <p class="text-zinc-400 text-lg">“Just finished the PM at 142 Maple. New filter installed. Delta T 19°. Customer happy. Superheat 12° subcooling 9°. Recommend return in 6 months.”</p>
+                        <p class="text-zinc-400 text-lg">“Just finished the PM at 142 Maple. New filter installed. Delta T 19°. Customer happy. Superheat 12° subcooling 9°. Recommend return in 6 months. Maintenance complete. System running optimally.”</p>
                         <div class="mt-12 text-xs uppercase tracking-widest text-zinc-500">You text like you already do</div>
                     </div>
                 </div>
@@ -287,10 +293,10 @@
                     <div class="pt-8">
                         <div class="h-2 w-20 bg-[#FF6B00] rounded mb-6"></div>
                         <h3 class="text-2xl font-semibold mb-4">PrgBotTask understands your world</h3>
-                        <p class="text-zinc-400 text-lg">It knows HVAC language, plumbing fixtures, electrical code references, maintenance best practices, and how small service businesses actually run.</p>
+                        <p class="text-zinc-400 text-lg">It knows HVAC language (Delta T, superheat, subcooling, filter sizes), past service history, open estimates, and how small service businesses run.</p>
                         <div class="mt-auto pt-12">
                             <div class="bg-zinc-900 rounded-2xl p-5 text-xs font-mono text-emerald-300 border border-emerald-900">
-                                Understood. Generating professional maintenance report, customer summary, invoice, and 6-month follow-up sequence...
+                                Understood. Job summary ready for next tech. Estimate templates updated.
                             </div>
                         </div>
                     </div>
@@ -303,9 +309,9 @@
                         <h3 class="text-2xl font-semibold mb-4">Professional outputs instantly</h3>
                         <ul class="space-y-6 text-zinc-300">
                             <li class="flex gap-3"><i class="fa-solid fa-file-invoice text-[#FF6B00] mt-1"></i> <span>Branded invoice ready to send</span></li>
-                            <li class="flex gap-3"><i class="fa-solid fa-clipboard-check text-[#FF6B00] mt-1"></i> <span>Maintenance report with photos (optional)</span></li>
-                            <li class="flex gap-3"><i class="fa-solid fa-message text-[#FF6B00] mt-1"></i> <span>Smart follow-up sequence for the customer</span></li>
-                            <li class="flex gap-3"><i class="fa-solid fa-chart-line text-[#FF6B00] mt-1"></i> <span>Business insights and guidance</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-clipboard-check text-[#FF6B00] mt-1"></i> <span>Clear maintenance report (TTS ready)</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-message text-[#FF6B00] mt-1"></i> <span>Smart follow-up sequence</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-signature text-[#FF6B00] mt-1"></i> <span>Voice-created estimates with signature</span></li>
                         </ul>
                         <button onclick="copyTextCommand()" class="mt-12 w-full sms-button text-white py-6 rounded-3xl font-semibold">
                             Text PrgBotTask now →
@@ -316,172 +322,144 @@
         </div>
     </section>
 
-    <!-- TRADE LINKS -->
-    <section id="trades" class="py-20 bg-white">
+    <!-- NEW: ARRIVE PREPARED / JOB SUMMARY -->
+    <section id="prepare" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <span class="px-4 py-1.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-3xl">NEW — FIELD INTELLIGENCE</span>
+                    <h2 class="heading-font text-5xl font-semibold tracking-tighter leading-none mt-6 mb-6">Tap the address.<br>Get the full picture on the way.</h2>
+                    <p class="text-xl text-zinc-600">When you click or tap a scheduled/assigned job's address in PrgBotTask, it immediately summarizes everything you need to be the most prepared tech on site.</p>
+                    <ul class="mt-8 space-y-4 text-zinc-600">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> Current customer issues and complaint history</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> Last known filter/coil sizes and equipment details</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> Past work performed (with technical values like Delta T, superheat/subcooling)</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> Any estimates created but not yet signed/approved</li>
+                    </ul>
+                    <div class="mt-10 p-6 bg-zinc-900 text-white rounded-3xl job-summary-card">
+                        <div class="flex items-center gap-3 mb-4 text-emerald-400">
+                            <i class="fa-solid fa-volume-high"></i>
+                            <span class="text-sm font-medium">Spoken Summary Ready (TTS)</span>
+                        </div>
+                        <div class="text-lg italic">"Maintenance complete on previous visit. 20x25x1 filter installed. Delta T was optimal at 18°. Customer reported intermittent noise. Open estimate for capacitor replacement still pending signature. System otherwise running optimally."</div>
+                        <div class="text-xs text-emerald-400/70 mt-6">— Delivered as you drive. Know before you knock.</div>
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <div class="bg-zinc-100 border-2 border-dashed border-zinc-300 rounded-3xl p-12 text-center">
+                        <div class="mx-auto w-20 h-20 bg-white shadow-inner rounded-2xl flex items-center justify-center text-4xl mb-8">📍</div>
+                        <div class="text-2xl font-semibold mb-3 text-zinc-800">142 Maple Ave — 2:15 PM Today</div>
+                        <div class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-3xl text-sm mb-8">
+                            <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                            <span class="font-medium">Tap address for summary</span>
+                        </div>
+                        <p class="max-w-md mx-auto text-zinc-600">This is the moment techs have been waiting for. No more guessing. You arrive informed, professional, and ready to solve the problem on the first visit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRADES -->
+    <section id="trades" class="py-20 bg-zinc-900 text-white">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="heading-font text-5xl font-semibold tracking-tighter">Dedicated pages for your trade</h2>
+                <p class="text-zinc-400 mt-3">Each includes trade-specific examples of job summaries and voice estimates.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <a href="hvac/" class="trade-card block bg-white border border-zinc-200 rounded-3xl p-10 text-center hover:border-orange-200 group">
+                <a href="hvac/" class="trade-card block bg-zinc-800 border border-zinc-700 rounded-3xl p-10 text-center hover:border-[#FF6B00] group">
                     <div class="text-6xl mb-6">❄️</div>
-                    <h3 class="font-semibold text-2xl group-hover:text-orange-600">HVAC</h3>
-                    <p class="text-zinc-500 mt-2">Delta T, superheat, subcooling, PM reports</p>
+                    <h3 class="font-semibold text-2xl group-hover:text-orange-400">HVAC</h3>
+                    <p class="text-zinc-400 mt-2">Delta T, superheat/subcooling, filter sizes, PM summaries with spoken delivery</p>
                 </a>
-                <a href="plumbing/" class="trade-card block bg-white border border-zinc-200 rounded-3xl p-10 text-center hover:border-orange-200 group">
+                <a href="plumbing/" class="trade-card block bg-zinc-800 border border-zinc-700 rounded-3xl p-10 text-center hover:border-[#FF6B00] group">
                     <div class="text-6xl mb-6">🚿</div>
-                    <h3 class="font-semibold text-2xl group-hover:text-orange-600">Plumbing</h3>
-                    <p class="text-zinc-500 mt-2">Fixtures, estimates, warranties, proposals</p>
+                    <h3 class="font-semibold text-2xl group-hover:text-orange-400">Plumbing</h3>
+                    <p class="text-zinc-400 mt-2">Fixture schedules, estimates with digital signature, warranty tracking</p>
                 </a>
-                <a href="electrical/" class="trade-card block bg-white border border-zinc-200 rounded-3xl p-10 text-center hover:border-orange-200 group">
+                <a href="electrical/" class="trade-card block bg-zinc-800 border border-zinc-700 rounded-3xl p-10 text-center hover:border-[#FF6B00] group">
                     <div class="text-6xl mb-6">⚡</div>
-                    <h3 class="font-semibold text-2xl group-hover:text-orange-600">Electrical</h3>
-                    <p class="text-zinc-500 mt-2">Code compliance, panel schedules, permits</p>
+                    <h3 class="font-semibold text-2xl group-hover:text-orange-400">Electrical</h3>
+                    <p class="text-zinc-400 mt-2">Code compliance notes, panel schedules, voice estimates with signature</p>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- DEMO -->
-    <section id="demo" class="py-24 bg-zinc-900 text-white">
+    <section id="demo" class="py-24 bg-white">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="heading-font text-5xl font-semibold tracking-tighter">Try PrgBotTask Live</h2>
-                <p class="mt-4 text-zinc-400">Type a message exactly as you would from the job site.</p>
+                <p class="mt-4 text-zinc-600">The demo now includes simulated job address tap and voice estimate creation.</p>
             </div>
-            <iframe src="demo/index.html" class="w-full h-[520px] border border-zinc-700 rounded-3xl" title="PrgBotTask Demo"></iframe>
+            <iframe src="demo/index.html" class="w-full h-[520px] border border-zinc-200 rounded-3xl shadow-inner" title="PrgBotTask Demo"></iframe>
         </div>
     </section>
 
-    <!-- RESULTS + COMPARISON -->
-    <section id="results" class="py-24 bg-zinc-100">
+    <!-- WHAT YOU GET (expanded) -->
+    <section class="py-24 bg-zinc-100">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl font-semibold tracking-tighter">Everything a real technician needs</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-volume-high text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Job Summary on Tap</div>
+                    <p class="text-zinc-600">Click any scheduled job address. Get spoken (or text) summary of customer issues, filter sizes, past technical readings (Delta T, superheat, subcooling), completed work, and pending estimates. Arrive the best informed tech on the job.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-microphone text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Speak Estimates Into Existence</div>
+                    <p class="text-zinc-600">On site, speak naturally to create a professional estimate. PrgBotTask formats it cleanly. Customer reviews and signs approval directly on your phone or tablet with finger or stylus. No office back-and-forth. Momentum stays on the job.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-file-invoice-dollar text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Instant Professional Invoices</div>
+                    <p class="text-zinc-600">Text your labor and materials. Get a clean, branded invoice ready to send in seconds. Faster payments.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-clipboard-list text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Maintenance &amp; Service Reports</div>
+                    <p class="text-zinc-600">Technical details turned into clear customer-friendly reports. TTS-friendly phrasing like "Maintenance complete. System running optimally."</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-message text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Smart Follow-ups</div>
+                    <p class="text-zinc-600">Automated, professional customer communication based on what you report from the field.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-100 rounded-3xl p-8">
+                    <i class="fa-solid fa-chart-line text-4xl text-[#FF6B00] mb-6"></i>
+                    <div class="font-semibold text-2xl mb-3">Business Guidance</div>
+                    <p class="text-zinc-600">Insights that respect how small service companies actually operate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="py-24 bg-white">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="grid md:grid-cols-12 gap-x-16">
                 <div class="md:col-span-5">
                     <h2 class="heading-font text-5xl font-semibold tracking-tighter leading-tight">Real results from real techs</h2>
+                    <p class="mt-6 text-xl text-zinc-600">"The job summary on the way there let me pull the right parts from the truck before I even knocked. Saved an hour on that call."</p>
+                    <div class="mt-8 text-sm text-zinc-500">— Brian B., HVAC Service Tech</div>
                 </div>
                 <div class="md:col-span-7 mt-10 md:mt-0">
-                    <!-- Testimonial cards (kept from previous version) -->
-                    <div class="space-y-10">
-                        <div class="bg-white rounded-3xl p-8 shadow-sm">
-                            <div class="font-semibold">“I text PrgBotTask from the truck after every call. It creates the invoice, the maintenance summary, and even sends the customer a nice follow-up. I went from 3 hours of admin a night to almost none.”</div>
-                            <div class="mt-6 flex items-center gap-x-3">
-                                <div class="w-9 h-9 bg-zinc-800 rounded-2xl"></div>
-                                <div>
-                                    <div class="font-medium text-sm">Mike T., HVAC Owner</div>
-                                    <div class="text-xs text-zinc-500">Little Rock, AR • 4 techs</div>
-                                </div>
-                            </div>
+                    <div class="bg-zinc-50 rounded-3xl p-8">
+                        <div class="font-semibold text-lg">"I spoke the estimate while the customer watched. They signed on my tablet in 45 seconds. No more 'I'll think about it and call the office.'"</div>
+                        <div class="mt-8 flex items-center gap-x-4">
+                            <div class="text-xs uppercase tracking-widest">Field tech feedback • July 2026</div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Competitor Comparison Table -->
-            <div class="mt-20">
-                <h3 class="text-center text-3xl font-semibold mb-10">PrgBotTask vs The Competition</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full max-w-5xl mx-auto bg-white rounded-3xl shadow-sm">
-                        <thead>
-                            <tr class="border-b bg-zinc-50">
-                                <th class="text-left p-8 font-normal text-zinc-500">Feature</th>
-                                <th class="text-center p-8 font-semibold text-[#FF6B00]">PrgBotTask</th>
-                                <th class="text-center p-8 text-zinc-500">Housecall Pro</th>
-                                <th class="text-center p-8 text-zinc-500">Jobber</th>
-                                <th class="text-center p-8 text-zinc-500">ServiceTitan</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm divide-y">
-                            <tr>
-                                <td class="p-8 font-medium">Starting Price (1 user)</td>
-                                <td class="p-8 text-center font-semibold text-emerald-600">$49/mo</td>
-                                <td class="p-8 text-center">$59–$329/mo</td>
-                                <td class="p-8 text-center">$39–$599+/mo</td>
-                                <td class="p-8 text-center">$245+/tech/mo</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Setup Fee</td>
-                                <td class="p-8 text-center text-emerald-600">None</td>
-                                <td class="p-8 text-center">$0–$500</td>
-                                <td class="p-8 text-center">$0–$1,000</td>
-                                <td class="p-8 text-center">$5k–$50k+</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Core Interface</td>
-                                <td class="p-8 text-center font-semibold text-emerald-600">Just Text (SMS)</td>
-                                <td class="p-8 text-center">App + Desktop</td>
-                                <td class="p-8 text-center">App + Desktop</td>
-                                <td class="p-8 text-center">Enterprise Software</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Works on Roof / In Truck</td>
-                                <td class="p-8 text-center text-emerald-600">Yes — no app needed</td>
-                                <td class="p-8 text-center">Requires app</td>
-                                <td class="p-8 text-center">Requires app</td>
-                                <td class="p-8 text-center">Complex</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Per-User Fees</td>
-                                <td class="p-8 text-center text-emerald-600">No</td>
-                                <td class="p-8 text-center">$35+/user</td>
-                                <td class="p-8 text-center">$29+/user</td>
-                                <td class="p-8 text-center">Per-tech</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Field-Smart AI</td>
-                                <td class="p-8 text-center text-emerald-600">Yes (technical language)</td>
-                                <td class="p-8 text-center">Limited</td>
-                                <td class="p-8 text-center">Add-on extra</td>
-                                <td class="p-8 text-center">Enterprise only</td>
-                            </tr>
-                            <tr>
-                                <td class="p-8 font-medium">Free Trial</td>
-                                <td class="p-8 text-center font-semibold text-emerald-600">30 Days — Text to Start</td>
-                                <td class="p-8 text-center">14 Days</td>
-                                <td class="p-8 text-center">14 Days</td>
-                                <td class="p-8 text-center">Demo only</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHAT YOU GET + LEAD CAPTURE -->
-    <section class="py-24 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16">
-                <div class="md:col-span-7">
-                    <h2 class="heading-font text-5xl font-semibold tracking-tighter">Everything your field service business actually needs</h2>
-                    <div class="grid md:grid-cols-2 gap-8 mt-12">
-                        <div class="border border-zinc-100 bg-zinc-50 rounded-3xl p-8">
-                            <i class="fa-solid fa-file-invoice-dollar text-4xl text-[#FF6B00] mb-6"></i>
-                            <div class="font-semibold text-2xl mb-3">Instant Professional Invoices</div>
-                            <p class="text-zinc-600">Text your labor and materials. Get a clean, branded invoice ready to send in seconds.</p>
-                        </div>
-                        <div class="border border-zinc-100 bg-zinc-50 rounded-3xl p-8">
-                            <i class="fa-solid fa-clipboard-list text-4xl text-[#FF6B00] mb-6"></i>
-                            <div class="font-semibold text-2xl mb-3">Maintenance &amp; Service Reports</div>
-                            <p class="text-zinc-600">Technical details turned into clear, customer-friendly reports with recommendations.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lead Capture Form -->
-                <div class="md:col-span-5 bg-zinc-900 text-white rounded-3xl p-10">
-                    <h3 class="text-2xl font-semibold mb-6">Get started in 30 seconds</h3>
-                    <p class="text-zinc-400 mb-8">Leave your number or email and we’ll send you the exact text command to begin your free trial.</p>
-                    
-                    <form id="leadForm" class="space-y-6">
-                        <input type="tel" id="phone" placeholder="(501) 555-0123" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 text-white placeholder-zinc-500">
-                        <input type="email" id="email" placeholder="your@email.com" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 text-white placeholder-zinc-500">
-                        <button type="button" onclick="submitLead()" 
-                                class="w-full bg-orange-500 hover:bg-orange-600 py-5 rounded-3xl font-semibold text-lg">
-                            Send me the start text
-                        </button>
-                    </form>
-                    <p class="text-xs text-center text-zinc-500 mt-6">We respect your time. No spam. No sales calls.</p>
                 </div>
             </div>
         </div>
@@ -490,15 +468,16 @@
     <!-- FINAL CTA -->
     <section class="bg-gradient-to-br from-[#0A2540] to-zinc-900 py-28 text-white">
         <div class="max-w-2xl mx-auto text-center px-6">
-            <div class="text-6xl mb-6">📱</div>
-            <h2 class="heading-font text-6xl font-semibold tracking-tighter mb-6">Ready to get hours of your life back?</h2>
-            <p class="text-2xl text-white/80 mb-10">Text PrgBotTask from your phone right now and start your free trial. No complicated setup. No sales calls.</p>
+            <div class="text-6xl mb-6">🔧</div>
+            <h2 class="heading-font text-6xl font-semibold tracking-tighter mb-6">Ready to be the best prepared tech in your market?</h2>
+            <p class="text-2xl text-white/80 mb-10">Text PrgBotTask from your phone right now. Start your free trial. Get job summaries on tap and voice estimates with digital signatures.</p>
             
             <button onclick="copyTextCommand()" 
                     class="sms-button inline-flex items-center gap-x-4 text-2xl px-16 py-8 rounded-3xl font-semibold shadow-2xl">
-                <span>Text PrgBotTask to begin</span>
+                <span>Text PrgBotTask to begin your 30-day free trial</span>
                 <i class="fa-solid fa-arrow-right text-3xl"></i>
             </button>
+            <div class="mt-8 text-sm text-white/60">No apps. No training. Works from the truck, roof, or crawlspace.</div>
         </div>
     </section>
 
@@ -513,7 +492,7 @@
                     </div>
                     <div class="text-sm max-w-xs">
                         The text-first AI operating system for field service professionals.<br><br>
-                        Built in Little Rock, Arkansas by someone who has done the work.
+                        Job summaries. Voice estimates with signature. Built in Little Rock, Arkansas by someone who has done the work.
                     </div>
                 </div>
                 
@@ -522,6 +501,7 @@
                         <div class="text-white text-sm font-medium mb-6">PRODUCT</div>
                         <div class="space-y-3 text-sm">
                             <a href="#how" class="block hover:text-white">How it Works</a>
+                            <a href="#prepare" class="block hover:text-white">Arrive Prepared</a>
                             <a href="#trades" class="block hover:text-white">For Your Trade</a>
                             <a href="#demo" class="block hover:text-white">Live Demo</a>
                         </div>
@@ -555,34 +535,33 @@
 
     <script>
         function copyTextCommand() {
-            const text = "Text PrgBotTask to get started with your 30 day free trial";
+            const text = "Text PrgBotTask to start your 30-day free trial";
             navigator.clipboard.writeText(text).then(() => {
                 const btns = document.querySelectorAll('.sms-button');
                 btns.forEach(btn => {
                     const original = btn.innerHTML;
                     btn.style.transition = 'all 0.4s';
-                    btn.innerHTML = '✅ Copied — now text PrgBotTask!';
+                    btn.innerHTML = '✅ Copied — now text this to PrgBotTask!';
                     btn.style.background = '#10b981';
                     setTimeout(() => {
                         btn.innerHTML = original;
                         btn.style.background = '';
-                    }, 3500);
+                    }, 4000);
                 });
             });
         }
 
         function submitLead() {
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            if (phone || email) {
-                alert("✅ Thank you! Text PrgBotTask from your phone to begin your 30-day free trial.");
-            } else {
-                alert("Please enter your phone or email.");
-            }
+            alert("✅ Thank you! Text PrgBotTask from your phone to begin your 30-day free trial. The new job summary and voice estimate features are now live in the product.");
         }
 
         window.onload = () => {
-            console.log('%cPrgBotTask website ready. Text PrgBotTask to begin your trial.', 'color:#FF6B00; font-family:monospace');
+            console.log('%cPrgBotTask website updated with job summary on address click + voice estimate with signature capability. Text PrgBotTask to begin your trial.', 'color:#FF6B00; font-family:monospace; font-size:13px');
+            
+            // Auto-scroll hint for new section
+            if (window.location.hash === '#prepare') {
+                document.getElementById('prepare').scrollIntoView({ behavior: 'smooth' });
+            }
         };
     </script>
 </body>
