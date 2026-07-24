@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrgBotTask for Plumbing — Text PrgBotTask</title>
+    <title>PrgBotTask for Plumbing — Voice Estimates + Digital Signature</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
         .tail-container { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
-        .hero-bg { background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.85)), url('https://picsum.photos/id/201/2000/1200') center/cover; }
+        .hero-bg { background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.9)), url('https://picsum.photos/id/106/2000/1200') center/cover; }
     </style>
 </head>
 <body class="tail-container bg-zinc-50">
     <nav class="bg-white border-b sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl">P</div>
+                <div class="w-9 h-9 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl font-bold">P</div>
                 <span class="heading-font text-3xl font-semibold">PrgBotTask</span>
             </div>
             <a href="https://prgbottask.com" class="text-sm font-medium hover:text-orange-600">← Back to Home</a>
@@ -26,20 +27,35 @@
     <header class="hero-bg text-white py-24">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h1 class="heading-font text-6xl font-semibold tracking-tighter">PrgBotTask for Plumbing</h1>
-            <p class="text-2xl mt-6 max-w-2xl mx-auto">Fixtures, estimates, warranties, before/after photos — all turned into professional documents from a simple text.</p>
+            <p class="text-2xl mt-6 max-w-2xl mx-auto">Fixture schedules, warranty tracking, and on-site voice estimates that customers sign on your tablet.</p>
             <button onclick="copyTextCommand()" class="mt-10 bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-3xl text-xl font-semibold">Text PrgBotTask to start your free trial</button>
         </div>
     </header>
 
-    <div class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <p class="text-xl">More dedicated trade pages coming soon (Electrical, Maintenance, General Service).</p>
-        <button onclick="copyTextCommand()" class="mt-10 bg-orange-500 text-white px-10 py-4 rounded-3xl font-semibold">Text PrgBotTask now →</button>
+    <div class="max-w-4xl mx-auto px-6 py-16">
+        <h2 class="text-4xl font-semibold mb-8">Field-First Plumbing Tools</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-3xl border border-emerald-200">
+                <h3 class="font-semibold text-xl mb-4">Voice Estimate + Signature</h3>
+                <p class="text-zinc-600">Speak the scope while the customer watches. PrgBotTask formats a clean proposal. Customer signs with finger or stylus on your phone/tablet. Job closes immediately.</p>
+                <a href="../estimate.html" class="mt-6 text-emerald-600 hover:underline text-sm">Open prototype →</a>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border">
+                <h3 class="font-semibold text-xl mb-4">Job Summary on Tap</h3>
+                <p class="text-zinc-600">Tap the address for instant summary of past work, fixture sizes, open estimates, and customer history before you knock.</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-sm text-zinc-500">Built for real tradespeople. Text from the truck or job site.</p>
+            <button onclick="copyTextCommand()" class="mt-8 bg-orange-500 text-white px-12 py-5 rounded-3xl font-semibold">Text PrgBotTask to start your 30-day free trial</button>
+        </div>
     </div>
 
     <script>
         function copyTextCommand() {
-            navigator.clipboard.writeText("Text PrgBotTask for plumbing workflows");
-            alert("✅ Copied! Text PrgBotTask from your phone to begin.");
+            navigator.clipboard.writeText("Text PrgBotTask to start your 30-day free trial");
+            alert("✅ Copied! Text this from your phone to begin.");
         }
     </script>
 </body>

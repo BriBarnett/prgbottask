@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrgBotTask Field Estimate — Speak • Review • Sign</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .chat-bubble { max-width: 85%; padding: 16px 20px; border-radius: 20px; margin-bottom: 16px; }
+        .user-bubble { background: #FF6B00; color: white; border-bottom-right-radius: 4px; margin-left: auto; }
+        .bot-bubble { background: #f8fafc; color: #0f172a; border: 1px solid #e2e8f0; border-bottom-left-radius: 4px; }
+        .signature-pad { border: 3px dashed #FF6B00; background: white; touch-action: none; cursor: crosshair; }
+        .estimate-card { background: linear-gradient(135deg, #0A2540, #1e3a5f); }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-white min-h-screen">
+    <div class="max-w-2xl mx-auto pt-8 px-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-[#FF6B00] rounded-2xl flex items-center justify-center text-3xl font-bold">P</div>
+                <span class="heading-font text-3xl font-semibold tracking-tighter">PrgBotTask</span>
+            </div>
+            <a href="/" class="text-zinc-400 hover:text-white flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-arrow-left"></i> Back to Site
+            </a>
+        </div>
+
+        <div class="text-center mb-10">
+            <div class="inline-flex bg-emerald-900 text-emerald-300 text-xs font-medium px-5 py-2 rounded-3xl mb-4">
+                <i class="fa-solid fa-microphone mr-2"></i> VOICE ESTIMATE MODE — HVAC TECH
+            </div>
+            <h1 class="heading-font text-5xl font-semibold tracking-tighter">Speak the estimate.<br>Customer signs on your tablet.</h1>
+            <p class="text-zinc-400 mt-4">No typing. No office handoff. Momentum stays on the job.</p>
+        </div>
+
+        <div id="chat" class="bg-zinc-900 rounded-3xl p-6 h-[380px] overflow-y-auto mb-6 border border-zinc-700"></div>
+
+        <div class="flex gap-3 mb-8">
+            <input id="voiceInput" type="text" placeholder="Speak or type: New 5-ton condenser, TXV, labor 950..." 
+                   class="flex-1 bg-zinc-800 border border-zinc-700 rounded-3xl px-6 py-4 text-white placeholder-zinc-400 focus:outline-none">
+            <button onclick="createEstimate()" 
+                    class="bg-[#FF6B00] hover:bg-orange-600 px-10 rounded-3xl font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Create</span>
+            </button>
+        </div>
+
+        <div id="estimateReview" class="hidden estimate-card rounded-3xl p-8 text-white">
+            <div class="flex justify-between mb-6">
+                <div>
+                    <div class="text-emerald-400 text-sm font-medium">ESTIMATE #EST-20260724-01</div>
+                    <div class="text-2xl font-semibold" id="estimateTitle">New Condenser &amp; TXV</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-3xl font-bold text-emerald-400" id="estimateTotal">$2,847</div>
+                    <div class="text-xs text-emerald-400/70">incl. 5yr compressor warranty</div>
+                </div>
+            </div>
+            
+            <div id="estimateBody" class="text-sm leading-relaxed bg-black/30 p-5 rounded-2xl mb-8"></div>
+
+            <div class="text-xs uppercase tracking-widest text-emerald-400 mb-3">Customer Signature</div>
+            <canvas id="signatureCanvas" class="signature-pad w-full h-56 rounded-2xl" width="600" height="240"></canvas>
+            
+            <div class="flex gap-4 mt-8">
+                <button onclick="clearSignature()" 
+                        class="flex-1 py-4 border border-white/30 hover:bg-white/10 rounded-2xl text-white">Clear Signature</button>
+                <button onclick="approveEstimate()" 
+                        class="flex-1 bg-emerald-500 hover:bg-emerald-600 py-4 rounded-2xl font-semibold">Customer Approves • Sign</button>
+            </div>
+        </div>
+
+        <div id="successScreen" class="hidden text-center py-12">
+            <div class="text-6xl mb-6">✅</div>
+            <h2 class="text-4xl font-semibold mb-3">Estimate Approved</h2>
+            <p class="text-emerald-400 text-lg">Signed by customer. Job updated. Invoice and follow-up sequence generated.</p>
+            <button onclick="resetFlow()" 
+                    class="mt-10 bg-white text-zinc-900 px-10 py-4 rounded-3xl font-semibold">New Estimate</button>
+            <div onclick="window.location.href='/'" 
+                 class="mt-8 text-zinc-400 text-sm cursor-pointer hover:text-white">← Return to prgbottask.com</div>
+        </div>
+
+        <div class="text-center text-[10px] text-zinc-500 mt-12">
+            Production prototype • Real TTS audio can be triggered via the text_to_speech tool in the full backend.<br>
+            Signature is saved as PNG data URL (ready for backend storage).
+        </div>
+    </div>
+
+    <script>
+        const chat = document.getElementById('chat');
+        let canvas, ctx, isDrawing = false;
+        let currentEstimate = {};
+
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = `chat-bubble ${isUser ? 'user-bubble' : 'bot-bubble'}`;
+            div.innerHTML = text;
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function createEstimate() {
+            const input = document.getElementById('voiceInput');
+            const spokenText = input.value.trim() || "New 5 ton condenser, TXV valve, and labor for Trane unit at 142 Maple. Delta T was running high.";
+            if (!spokenText) return;
+
+            addMessage(`🔊 <strong>${spokenText}</strong>`, true);
+
+            input.value = '';
+
+            setTimeout(() => {
+                currentEstimate = {
+                    title: "Condenser + TXV Replacement",
+                    total: 2847,
+                    body: `• 5-ton Trane condenser: $1,675<br>• TXV valve + lineset: $422<br>• Labor (6 hrs @ $125): $750<br>• Recovery &amp; recharge: $0 (covered under PM)<br><br><strong>Technical notes:</strong> Previous Delta T was 22° (high). Subcooling low. This addresses root cause.<br><br>5-year compressor warranty. System will run optimally after install.`
+                };
+
+                addMessage(`✅ Estimate created from your voice input.<br><br>Reviewing with customer now...`, false);
+                
+                document.getElementById('estimateReview').classList.remove('hidden');
+                document.getElementById('estimateTitle').textContent = currentEstimate.title;
+                document.getElementById('estimateTotal').textContent = '$' + currentEstimate.total;
+                document.getElementById('estimateBody').innerHTML = currentEstimate.body;
+
+                initSignaturePad();
+            }, 1100);
+        }
+
+        function initSignaturePad() {
+            canvas = document.getElementById('signatureCanvas');
+            ctx = canvas.getContext('2d');
+            ctx.strokeStyle = '#FF6B00';
+            ctx.lineWidth = 4;
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDraw);
+            canvas.addEventListener('mouseout', stopDraw);
+            
+            canvas.addEventListener('touchstart', startDraw);
+            canvas.addEventListener('touchmove', draw);
+            canvas.addEventListener('touchend', stopDraw);
+        }
+
+        function startDraw(e) { isDrawing = true; draw(e); }
+        function stopDraw() { isDrawing = false; ctx.beginPath(); }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+            const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+            
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        function clearSignature() {
+            if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function approveEstimate() {
+            const dataURL = canvas.toDataURL('image/png');
+            console.log('%cSignature captured and would be saved to backend:', 'color:#FF6B00', dataURL.substring(0, 80) + '...');
+            
+            document.getElementById('estimateReview').classList.add('hidden');
+            document.getElementById('successScreen').classList.remove('hidden');
+            
+            // Simulate TTS confirmation
+            addMessage(`🔊 “Estimate approved by customer. Job status updated. Maintenance summary and invoice generated. System will run optimally after install.”`, false);
+        }
+
+        function resetFlow() {
+            document.getElementById('successScreen').classList.add('hidden');
+            document.getElementById('estimateReview').classList.add('hidden');
+            chat.innerHTML = '';
+            addMessage("Ready for next job. Speak naturally or type to create estimate.", false);
+        }
+
+        // Initialize
+        window.onload = () => {
+            addMessage("✅ <strong>Voice Estimate Mode Active</strong><br><br>Speak your recommendation. Customer will review and sign on this device.<br><br><em>Example: “Create estimate for new run capacitor and labor on the Trane unit.”</em>", false);
+            
+            // Pre-load one example message
+            setTimeout(() => {
+                if (chat.children.length < 2) {
+                    addMessage("Just diagnosed high Delta T on the 4-ton Trane at 142 Maple. Recommend new condenser and TXV.", true);
+                    setTimeout(() => createEstimate(), 600);
+                }
+            }, 1400);
+        };
+    </script>
+</body>
+</html>
